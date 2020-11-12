@@ -1,14 +1,22 @@
-import InDB, { Column, ObjectStore, getAttributes } from '../src/index';
+import InDB, { Model, Column, Index, MultiIndex, ObjectStore } from '../src/index';
 
 @ObjectStore({ name: 'todo' })
-class Todo {
-  @Column({ index: true }) title: string;
-  @Column() description: string;
+class TodoModel extends Model {
+  @Column({ name: '_t' })
+  @Index({ name: 'index_t' })
+  title: string;
+
+  @Column()
+  @MultiIndex()
+  description: string;
+
+  @Column()
+  comment: string;
+
+  @Column()
+  comment2: string;
 }
 
-const todo = new Todo();
-console.log(todo);
-console.log(getAttributes(todo));
-
-const db = new InDB('todos');
+const db = new InDB('example-database', [new TodoModel()]);
+db.open();
 console.log(db);

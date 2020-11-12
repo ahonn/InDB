@@ -30,7 +30,7 @@ export function setObjectStoreOptions(
 
 export function ObjectStore(options: ObjectStoreOptions) {
   return (target: unknown) => {
-    const { name, keyPath, autoIncrement } = options;
+    const { name, keyPath, autoIncrement = true } = options;
     setObjectStoreName(target, name);
     setObjectStoreOptions(target, { keyPath, autoIncrement });
   };
