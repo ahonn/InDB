@@ -9,6 +9,8 @@
     "noImplicitReturns": false,
     "moduleResolution": "node",
     "lib": ["es2015", "dom"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "../dist",
     "sourceMap": true

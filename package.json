@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4",
-    "typescript": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
-    "@typescript-eslint/parser": "^4.1.0"
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.13.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }
